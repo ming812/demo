@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/launchFragment">
+
+    <fragment
+        android:id="@+id/xmlFragment"
+        android:name="com.example.weatherdemo.XmlFragment"
+        android:label="fragment_xml"
+        tools:layout="@layout/fragment_xml"
+        />
+    <fragment
+        android:id="@+id/composeFragment"
+        android:name="com.example.weatherdemo.ComposeFragment"
+        android:label="fragment_compose"
+        tools:layout="@layout/fragment_compose"
+        />
+    <action
+        android:id="@+id/action_global_xmlFragment"
+        app:destination="@id/xmlFragment"
+        />
+    <action
+        android:id="@+id/action_global_composeFragment"
+        app:destination="@id/composeFragment"
+        />
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.example.weatherdemo.LaunchFragment"
+        android:label="fragment_launch"
+        tools:layout="@layout/fragment_launch" >
+        <action
+            android:id="@+id/action_launchFragment_to_xmlFragment"
+            app:destination="@id/xmlFragment" />
+        <action
+            android:id="@+id/action_launchFragment_to_composeFragment"
+            app:destination="@id/composeFragment" />
+    </fragment>
+</navigation>
